@@ -20,8 +20,8 @@ services:
             dockerfile: ./docker/gunicorn/Dockerfile
         image: alculquicondor/gis_demo_gunicorn
         volumes:
-            - tilecache:/tile_cache
             - ./app:/srv/gis
+            - tilecache:/srv/gis/tile_cache
             - ./mapnik-stylesheets/world_boundaries:/srv/gis/world_boundaries
             - ./mapnik-stylesheets/symbols:/srv/gis/symbols
         links:
