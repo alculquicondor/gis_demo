@@ -1,0 +1,37 @@
+version: '2'
+
+volumes:
+    postgisdata:
+    tilecache:
+
+services:
+    postgis:
+        image: mdillon/postgis
+        volumes:
+            - postgisdata:/var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: 'topicos'
+            POSTGRES_DB: 'topicos'
+            POSTGRES_PASSWORD: 'WhatAnAwesomePassword'
+
+    gunicorn:
+        build:
+            context: .
+            dockerfile: ./docker/gunicorn/Dockerfile
+        image: alculquicondor/gis_demo_gunicorn
+        volumes:
+            - tilecache:/tile_cache
+            - ./mapnik-stylesheets/world_boundaries:/srv/gis/world_boundaries
+            - ./mapnik-stylesheets/symbols:/srv/gis/symbols
+        links:
+            - postgis
+
+    nginx:
+        build:
+            context: .
+            dockerfile: ./docker/nginx/Dockerfile
+        image: alculquicondor/gis_demo_nginx
+        links:
+            - gunicorn
+        ports:
+            - "80:80"
