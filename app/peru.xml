@@ -4984,7 +4984,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,aeroway,amenity,landuse,leisure,man_made,military,&quot;natural&quot;,power,tourism,name,highway,&#10;       case when religion in (&apos;christian&apos;,&apos;jewish&apos;) then religion else &apos;INT-generic&apos;::text end as religion&#10;       from planet_osm_polygon&#10;       where landuse is not null&#10;          or leisure is not null&#10;          or aeroway in (&apos;apron&apos;,&apos;aerodrome&apos;)&#10;          or amenity in (&apos;parking&apos;,&apos;university&apos;,&apos;college&apos;,&apos;school&apos;,&apos;hospital&apos;,&apos;kindergarten&apos;,&apos;grave_yard&apos;,&apos;prison&apos;)&#10;          or military in (&apos;barracks&apos;,&apos;danger_area&apos;)&#10;          or &quot;natural&quot; in (&apos;field&apos;,&apos;beach&apos;,&apos;desert&apos;,&apos;heath&apos;,&apos;mud&apos;,&apos;grassland&apos;,&apos;wood&apos;,&apos;sand&apos;,&apos;scrub&apos;)&#10;          or power in (&apos;station&apos;,&apos;sub_station&apos;,&apos;generator&apos;)&#10;          or tourism in (&apos;attraction&apos;,&apos;camp_site&apos;,&apos;caravan_site&apos;,&apos;picnic_site&apos;,&apos;zoo&apos;)&#10;          or highway in (&apos;services&apos;,&apos;rest_area&apos;)&#10;       order by z_order,way_area desc&#10;      ) as leisure</Parameter>
@@ -4998,7 +4998,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way&#10;       from planet_osm_line&#10;       where man_made=&apos;cutline&apos;&#10;      ) as leisure</Parameter>
@@ -5012,7 +5012,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,leisure,&#10;       case when leisure=&apos;pitch&apos; then 2&#10;            when leisure=&apos;track&apos; then 1&#10;            else 0 end as prio&#10;       from planet_osm_polygon&#10;       where leisure in (&apos;sports_centre&apos;,&apos;stadium&apos;,&apos;pitch&apos;,&apos;track&apos;)&#10;       order by z_order,prio,way_area desc&#10;      ) as sports_grounds</Parameter>
@@ -5026,7 +5026,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,waterway&#10;      from planet_osm_line&#10;      where waterway in (&apos;stream&apos;,&apos;drain&apos;,&apos;ditch&apos;)&#10;        and (tunnel is null or tunnel != &apos;yes&apos;)&#10;      ) as water_lines</Parameter>
@@ -5040,7 +5040,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&quot;natural&quot;,waterway,landuse,name&#10;      from planet_osm_polygon&#10;      where (waterway in (&apos;dock&apos;,&apos;mill_pond&apos;,&apos;riverbank&apos;,&apos;canal&apos;)&#10;         or landuse in (&apos;reservoir&apos;,&apos;water&apos;,&apos;basin&apos;)&#10;         or &quot;natural&quot; in (&apos;lake&apos;,&apos;water&apos;,&apos;land&apos;,&apos;glacier&apos;,&apos;mud&apos;,&apos;bay&apos;))&#10;         and building is null&#10;      order by z_order,way_area desc&#10;      ) as water_areas</Parameter>
@@ -5054,7 +5054,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&quot;natural&quot;&#10;      from planet_osm_polygon&#10;      where &quot;natural&quot; in (&apos;marsh&apos;,&apos;wetland&apos;) and building is null&#10;      order by z_order,way_area desc&#10;      ) as water_areas</Parameter>
@@ -5068,7 +5068,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name,way_area&#10;      from planet_osm_polygon&#10;      where &quot;natural&quot;=&apos;glacier&apos; and building is null&#10;      order by way_area desc&#10;      ) as glaciers</Parameter>
@@ -5082,7 +5082,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,waterway&#10;      from planet_osm_line&#10;      where waterway=&apos;river&apos;&#10;      ) as water_lines</Parameter>
@@ -5096,7 +5096,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,waterway,disused,lock,name,&#10;      case when tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else tunnel end as tunnel&#10;      from planet_osm_line&#10;      where waterway in (&apos;weir&apos;,&apos;river&apos;,&apos;canal&apos;,&apos;derelict_canal&apos;,&apos;stream&apos;,&apos;drain&apos;,&apos;ditch&apos;,&apos;wadi&apos;)&#10;        and (bridge is null or bridge not in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;aqueduct&apos;))&#10;      order by z_order&#10;      ) as water_lines</Parameter>
@@ -5110,7 +5110,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name from planet_osm_line where waterway=&apos;dam&apos;) as dam</Parameter>
@@ -5124,7 +5124,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_polygon where leisure =&apos;marina&apos;) as marinas</Parameter>
@@ -5138,7 +5138,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,man_made from planet_osm_polygon where man_made in (&apos;pier&apos;,&apos;breakwater&apos;,&apos;groyne&apos;)) as piers</Parameter>
@@ -5152,7 +5152,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,man_made from planet_osm_line where man_made in (&apos;pier&apos;,&apos;breakwater&apos;,&apos;groyne&apos;)) as piers</Parameter>
@@ -5166,7 +5166,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,waterway from planet_osm_point where waterway=&apos;lock_gate&apos;) as locks</Parameter>
@@ -5181,7 +5181,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway from planet_osm_line where highway in (&apos;motorway&apos;,&apos;motorway_link&apos;,&apos;trunk&apos;,&apos;trunk_link&apos;,&apos;primary&apos;,&apos;primary_link&apos;,&apos;secondary&apos;,&apos;secondary_link&apos;,&apos;tertiary&apos;,&apos;tertiary_link&apos;,&apos;residential&apos;,&apos;unclassified&apos;) and tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) order by z_order) as roads</Parameter>
@@ -5195,7 +5195,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where &quot;historic&quot;=&apos;citywalls&apos;) as citywalls</Parameter>
@@ -5209,7 +5209,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where &quot;historic&quot;=&apos;castle_walls&apos;) as castle_walls</Parameter>
@@ -5223,7 +5223,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_polygon where &quot;historic&quot;=&apos;castle_walls&apos;) as castle_walls</Parameter>
@@ -5237,7 +5237,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,landuse,leisure&#10;       from planet_osm_polygon&#10;       where (landuse = &apos;military&apos; or leisure=&apos;nature_reserve&apos;) and building is null&#10;      ) as landuse_overlay</Parameter>
@@ -5251,7 +5251,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select distinct on (p.way) p.way as way,l.highway as int_tc_type&#10;       from planet_osm_point p&#10;       join planet_osm_line l&#10;        on ST_DWithin(p.way,l.way,0.1)&#10;       join (values&#10;        (&apos;tertiary&apos;,1),&#10;        (&apos;unclassified&apos;,2),&#10;        (&apos;residential&apos;,3),&#10;        (&apos;living_street&apos;,4),&#10;        (&apos;service&apos;,5)&#10;       ) as v (highway,prio)&#10;        on v.highway=l.highway&#10;       where p.highway=&apos;turning_circle&apos;&#10;       order by p.way,v.prio&#10;      ) as turning_circle</Parameter>
@@ -5265,7 +5265,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,horse,foot,bicycle from planet_osm_line where highway in (&apos;bridleway&apos;,&apos;footway&apos;,&apos;cycleway&apos;,&apos;path&apos;) and tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) order by z_order) as roads</Parameter>
@@ -5279,7 +5279,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,tracktype from planet_osm_line where highway=&apos;track&apos; and tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;)) as tracks</Parameter>
@@ -5294,7 +5294,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,barrier,&quot;natural&quot;,man_made from planet_osm_line where barrier is not null or &quot;natural&quot; in (&apos;hedge&apos;,&apos;cliff&apos;) or man_made=&apos;embankment&apos;) as roads</Parameter>
@@ -5308,7 +5308,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,barrier,&quot;natural&quot; from planet_osm_polygon where barrier is not null or &quot;natural&quot;=&apos;hedge&apos;) as barriers</Parameter>
@@ -5322,7 +5322,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,railway from planet_osm_polygon&#10;       where highway in (&apos;residential&apos;,&apos;unclassified&apos;,&apos;pedestrian&apos;,&apos;service&apos;,&apos;footway&apos;,&apos;track&apos;,&apos;path&apos;,&apos;platform&apos;)&#10;          or railway=&apos;platform&apos;&#10;       order by z_order,way_area desc) as roads</Parameter>
@@ -5337,7 +5337,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,&#10;       case when tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else tunnel end as tunnel,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text else service end as service&#10;       from planet_osm_line&#10;       where highway in (&apos;motorway&apos;,&apos;motorway_link&apos;,&apos;trunk&apos;,&apos;trunk_link&apos;,&apos;primary&apos;,&apos;primary_link&apos;,&apos;secondary&apos;,&apos;secondary_link&apos;,&apos;tertiary&apos;,&apos;tertiary_link&apos;,&apos;residential&apos;,&apos;unclassified&apos;,&apos;road&apos;,&apos;service&apos;,&apos;pedestrian&apos;,&apos;raceway&apos;,&apos;living_street&apos;)&#10;       order by z_order) as roads</Parameter>
@@ -5351,7 +5351,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,railway,aeroway from planet_osm_polygon&#10;       where highway in (&apos;residential&apos;,&apos;unclassified&apos;,&apos;pedestrian&apos;,&apos;service&apos;,&apos;footway&apos;,&apos;living_street&apos;,&apos;track&apos;,&apos;path&apos;,&apos;platform&apos;,&apos;services&apos;)&#10;          or railway=&apos;platform&apos;&#10;          or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;,&apos;helipad&apos;)&#10;       order by z_order,way_area desc) as roads</Parameter>
@@ -5365,7 +5365,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,building,railway,amenity from planet_osm_polygon&#10;       where railway=&apos;station&apos;&#10;          or building in (&apos;station&apos;,&apos;supermarket&apos;)&#10;          or amenity=&apos;place_of_worship&apos;&#10;       order by z_order,way_area desc) as buildings</Parameter>
@@ -5379,7 +5379,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,aeroway,&#10;        case&#10;         when building in (&apos;residential&apos;,&apos;house&apos;,&apos;garage&apos;,&apos;garages&apos;,&apos;detached&apos;,&apos;terrace&apos;,&apos;apartments&apos;) then &apos;INT-light&apos;::text&#10;         else building&#10;        end as building&#10;       from planet_osm_polygon&#10;       where (building is not null&#10;         and building not in (&apos;no&apos;,&apos;station&apos;,&apos;supermarket&apos;,&apos;planned&apos;)&#10;         and (railway is null or railway != &apos;station&apos;)&#10;         and (amenity is null or amenity != &apos;place_of_worship&apos;))&#10;          or aeroway = &apos;terminal&apos;&#10;       order by z_order,way_area desc) as buildings</Parameter>
@@ -5393,7 +5393,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,tracktype from planet_osm_line where highway=&apos;track&apos; and (bridge is null or bridge in (&apos;no&apos;,&apos;false&apos;,&apos;0&apos;)) and (tunnel is null or tunnel in (&apos;no&apos;,&apos;false&apos;,&apos;0&apos;))) as tracks</Parameter>
@@ -5408,7 +5408,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,horse,bicycle,foot,construction,aeroway,&#10;       case when tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else tunnel end as tunnel,&#10;       case when bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;) then &apos;yes&apos;::text else bridge end as bridge,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;spur-siding-yard&apos;::text else railway end as railway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text else service end as service&#10;       from planet_osm_line&#10;       where highway is not null&#10;          or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;          or railway in (&apos;light_rail&apos;,&apos;narrow_gauge&apos;,&apos;funicular&apos;,&apos;rail&apos;,&apos;subway&apos;,&apos;tram&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;platform&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;,&apos;miniature&apos;,&apos;turntable&apos;)&#10;       order by z_order) as roads</Parameter>
@@ -5422,7 +5422,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select distinct on (p.way) p.way as way,l.highway as int_tc_type&#10;       from planet_osm_point p&#10;       join planet_osm_line l&#10;        on ST_DWithin(p.way,l.way,0.1)&#10;       join (values&#10;        (&apos;tertiary&apos;,1),&#10;        (&apos;unclassified&apos;,2),&#10;        (&apos;residential&apos;,3),&#10;        (&apos;living_street&apos;,4),&#10;        (&apos;service&apos;,5)&#10;       ) as v (highway,prio)&#10;        on v.highway=l.highway&#10;       where p.highway=&apos;turning_circle&apos;&#10;       order by p.way,v.prio&#10;      ) as turning_circle</Parameter>
@@ -5436,7 +5436,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where route=&apos;ferry&apos; ) as routes</Parameter>
@@ -5450,7 +5450,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,aerialway from planet_osm_line where aerialway is not null) as aerialways</Parameter>
@@ -5464,7 +5464,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,&#10;       case when tunnel in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else tunnel end as tunnel,&#10;       case when railway=&apos;preserved&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;) then &apos;INT-preserved-ssy&apos;::text else railway end as railway&#10;       from planet_osm_roads&#10;       where highway is not null&#10;          or (railway is not null and railway!=&apos;preserved&apos; and (service is null or service not in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;)))&#10;          or railway=&apos;preserved&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5478,7 +5478,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name&#10;       from planet_osm_line&#10;       where waterway=&apos;canal&apos;&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;aqueduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;       order by z_order&#10;      ) as water</Parameter>
@@ -5492,7 +5492,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and (bridge is null or bridge not in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;))&#10;      ) as access</Parameter>
@@ -5506,7 +5506,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and (bridge is null or bridge not in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;))&#10;      ) as directions</Parameter>
@@ -5522,7 +5522,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and (layer is null or layer = &apos;0&apos;)&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5536,7 +5536,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and (layer is null or layer in (&apos;-5&apos;,&apos;-4&apos;,&apos;-3&apos;,&apos;-2&apos;,&apos;-1&apos;,&apos;0&apos;))&#10;      ) as access</Parameter>
@@ -5550,7 +5550,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and (layer is null or layer in (&apos;-5&apos;,&apos;-4&apos;,&apos;-3&apos;,&apos;-2&apos;,&apos;-1&apos;,&apos;0&apos;))&#10;      ) as directions</Parameter>
@@ -5566,7 +5566,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;1&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5580,7 +5580,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;1&apos;&#10;      ) as access</Parameter>
@@ -5594,7 +5594,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;1&apos;&#10;      ) as directions</Parameter>
@@ -5610,7 +5610,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;2&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5624,7 +5624,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;2&apos;&#10;      ) as access</Parameter>
@@ -5638,7 +5638,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;2&apos;&#10;      ) as directions</Parameter>
@@ -5654,7 +5654,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;3&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5668,7 +5668,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;3&apos;&#10;      ) as access</Parameter>
@@ -5682,7 +5682,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;3&apos;&#10;      ) as directions</Parameter>
@@ -5698,7 +5698,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;4&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5712,7 +5712,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;4&apos;&#10;      ) as access</Parameter>
@@ -5726,7 +5726,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;4&apos;&#10;      ) as directions</Parameter>
@@ -5742,7 +5742,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,horse,bicycle,foot,tracktype,&#10;       case when railway in (&apos;spur&apos;,&apos;siding&apos;)&#10;              or (railway=&apos;rail&apos; and service in (&apos;spur&apos;,&apos;siding&apos;,&apos;yard&apos;))&#10;            then &apos;INT-spur-siding-yard&apos;::text else railway end as railway&#10;       from planet_osm_line&#10;       where (highway is not null&#10;              or aeroway in (&apos;runway&apos;,&apos;taxiway&apos;)&#10;              or railway in (&apos;light_rail&apos;,&apos;subway&apos;,&apos;narrow_gauge&apos;,&apos;rail&apos;,&apos;spur&apos;,&apos;siding&apos;,&apos;disused&apos;,&apos;abandoned&apos;,&apos;construction&apos;))&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;5&apos;&#10;       order by z_order&#10;      ) as roads</Parameter>
@@ -5756,7 +5756,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,access,highway,&#10;       case when service in (&apos;parking_aisle&apos;,&apos;drive-through&apos;,&apos;driveway&apos;) then &apos;INT-minor&apos;::text end as service&#10;       from planet_osm_line&#10;       where access is not null and highway is not null&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;5&apos;&#10;      ) as access</Parameter>
@@ -5770,7 +5770,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&#10;       case when oneway in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;) then &apos;yes&apos;::text else oneway end as oneway&#10;       from planet_osm_line&#10;       where oneway is not null&#10;         and (highway is not null or railway is not null or waterway is not null)&#10;         and bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;)&#10;         and layer = &apos;5&apos;&#10;      ) as directions</Parameter>
@@ -5784,7 +5784,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,railway,bridge from planet_osm_line where railway=&apos;tram&apos; and (tunnel is null or tunnel not in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;))) as trams</Parameter>
@@ -5798,7 +5798,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where highway=&apos;bus_guideway&apos; and (tunnel is null or tunnel not in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;))) as guideways</Parameter>
@@ -5812,7 +5812,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,admin_level&#10;       from planet_osm_roads&#10;       where &quot;boundary&quot;=&apos;administrative&apos;&#10;         and admin_level in (&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;)&#10;       ) as admin</Parameter>
@@ -5826,7 +5826,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,admin_level&#10;       from planet_osm_roads&#10;       where &quot;boundary&quot;=&apos;administrative&apos;&#10;         and admin_level in (&apos;5&apos;,&apos;6&apos;,&apos;7&apos;,&apos;8&apos;)&#10;       ) as admin</Parameter>
@@ -5840,7 +5840,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,admin_level&#10;       from planet_osm_roads&#10;       where &quot;boundary&quot;=&apos;administrative&apos;&#10;         and (admin_level is null or admin_level not in (&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;6&apos;,&apos;7&apos;,&apos;8&apos;))&#10;       ) as admin</Parameter>
@@ -5855,7 +5855,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,place,name,ref&#10;       from planet_osm_point&#10;       where place in (&apos;country&apos;,&apos;state&apos;)&#10;      ) as placenames</Parameter>
@@ -5869,7 +5869,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,place,name,ref&#10;       from planet_osm_point&#10;       where place in (&apos;city&apos;,&apos;metropolis&apos;,&apos;town&apos;) and capital=&apos;yes&apos;&#10;      ) as placenames</Parameter>
@@ -5884,7 +5884,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,place,name&#10;      from planet_osm_point&#10;      where place in (&apos;city&apos;,&apos;metropolis&apos;,&apos;town&apos;,&apos;large_town&apos;,&apos;small_town&apos;)&#10;        and (capital is null or capital != &apos;yes&apos;)&#10;      ) as placenames</Parameter>
@@ -5900,7 +5900,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,place,name&#10;      from planet_osm_point&#10;      where place in (&apos;suburb&apos;,&apos;village&apos;,&apos;large_village&apos;,&apos;hamlet&apos;,&apos;locality&apos;,&apos;isolated_dwelling&apos;,&apos;farm&apos;)&#10;      ) as placenames</Parameter>
@@ -5914,7 +5914,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name,railway,aerialway,disused&#10;      from planet_osm_point&#10;      where railway in (&apos;station&apos;,&apos;halt&apos;,&apos;tram_stop&apos;,&apos;subway_entrance&apos;)&#10;         or aerialway=&apos;station&apos;&#10;      ) as stations</Parameter>
@@ -5928,7 +5928,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name,railway,aerialway,disused&#10;      from planet_osm_polygon&#10;      where railway in (&apos;station&apos;,&apos;halt&apos;,&apos;tram_stop&apos;)&#10;         or aerialway=&apos;station&apos;&#10;      ) as stations</Parameter>
@@ -5942,7 +5942,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select *&#10;      from planet_osm_point&#10;      where aeroway in (&apos;airport&apos;,&apos;aerodrome&apos;,&apos;helipad&apos;)&#10;         or barrier in (&apos;bollard&apos;,&apos;gate&apos;,&apos;lift_gate&apos;,&apos;block&apos;)&#10;         or highway in (&apos;mini_roundabout&apos;,&apos;gate&apos;)&#10;         or man_made in (&apos;lighthouse&apos;,&apos;power_wind&apos;,&apos;windmill&apos;,&apos;mast&apos;)&#10;         or (power=&apos;generator&apos; and (&quot;generator:source&quot;=&apos;wind&apos; or power_source=&apos;wind&apos;))&#10;         or &quot;natural&quot; in (&apos;peak&apos;,&apos;volcano&apos;,&apos;spring&apos;,&apos;tree&apos;,&apos;cave_entrance&apos;)&#10;         or railway=&apos;level_crossing&apos;&#10;      ) as symbols</Parameter>
@@ -5956,7 +5956,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select *&#10;      from planet_osm_polygon&#10;      where aeroway in (&apos;airport&apos;,&apos;aerodrome&apos;,&apos;helipad&apos;)&#10;         or barrier in (&apos;bollard&apos;,&apos;gate&apos;,&apos;lift_gate&apos;,&apos;block&apos;)&#10;         or highway in (&apos;mini_roundabout&apos;,&apos;gate&apos;)&#10;         or man_made in (&apos;lighthouse&apos;,&apos;power_wind&apos;,&apos;windmill&apos;,&apos;mast&apos;)&#10;         or (power=&apos;generator&apos; and (&quot;generator:source&quot;=&apos;wind&apos; or power_source=&apos;wind&apos;))&#10;         or &quot;natural&quot; in (&apos;peak&apos;,&apos;volcano&apos;,&apos;spring&apos;,&apos;tree&apos;)&#10;         or railway=&apos;level_crossing&apos;&#10;      ) as symbols</Parameter>
@@ -5970,7 +5970,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure&#10;      from planet_osm_point&#10;      where amenity is not null&#10;         or shop is not null&#10;         or tourism in (&apos;alpine_hut&apos;,&apos;camp_site&apos;,&apos;caravan_site&apos;,&apos;guest_house&apos;,&apos;hostel&apos;,&apos;hotel&apos;,&apos;motel&apos;,&apos;museum&apos;,&apos;viewpoint&apos;,&apos;bed_and_breakfast&apos;,&apos;information&apos;,&apos;chalet&apos;)&#10;         or highway in (&apos;bus_stop&apos;,&apos;traffic_signals&apos;,&apos;ford&apos;)&#10;         or man_made in (&apos;mast&apos;,&apos;water_tower&apos;)&#10;         or historic in (&apos;memorial&apos;,&apos;archaeological_site&apos;)&#10;         or waterway=&apos;lock&apos;&#10;         or lock=&apos;yes&apos;&#10;         or leisure in (&apos;playground&apos;,&apos;slipway&apos;)&#10;      ) as points</Parameter>
@@ -5984,7 +5984,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure&#10;      from planet_osm_polygon&#10;      where amenity is not null&#10;         or shop is not null&#10;         or tourism in (&apos;alpine_hut&apos;,&apos;camp_site&apos;,&apos;caravan_site&apos;,&apos;guest_house&apos;,&apos;hostel&apos;,&apos;hotel&apos;,&apos;motel&apos;,&apos;museum&apos;,&apos;viewpoint&apos;,&apos;bed_and_breakfast&apos;,&apos;information&apos;,&apos;chalet&apos;)&#10;         or highway in (&apos;bus_stop&apos;,&apos;traffic_signals&apos;)&#10;         or man_made in (&apos;mast&apos;,&apos;water_tower&apos;)&#10;         or historic in (&apos;memorial&apos;,&apos;archaeological_site&apos;)&#10;         or leisure=&apos;playground&apos;&#10;      ) as points</Parameter>
@@ -5998,7 +5998,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where &quot;power&quot;=&apos;line&apos;) as power_line</Parameter>
@@ -6012,7 +6012,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where &quot;power&quot;=&apos;minor_line&apos;) as power_minorline</Parameter>
@@ -6026,7 +6026,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_point where power=&apos;tower&apos;) as power_towers</Parameter>
@@ -6040,7 +6040,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_point where power=&apos;pole&apos;) as power_poles</Parameter>
@@ -6054,7 +6054,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,ref,char_length(ref) as length&#10;       from planet_osm_roads&#10;       where highway in (&apos;motorway&apos;,&apos;trunk&apos;,&apos;primary&apos;,&apos;secondary&apos;)&#10;         and ref is not null&#10;         and char_length(ref) between 1 and 8&#10;      ) as roads</Parameter>
@@ -6068,7 +6068,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,ref,name&#10;      from planet_osm_point&#10;      where highway=&apos;motorway_junction&apos;&#10;     ) as junctions</Parameter>
@@ -6082,7 +6082,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,aeroway,ref,char_length(ref) as length,&#10;       case when bridge in (&apos;yes&apos;,&apos;true&apos;,&apos;1&apos;,&apos;viaduct&apos;,&apos;swing&apos;,&apos;lift&apos;) then &apos;yes&apos;::text else bridge end as bridge&#10;       from planet_osm_line&#10;       where (highway is not null or aeroway is not null)&#10;         and ref is not null&#10;         and char_length(ref) between 1 and 8&#10;      ) as roads</Parameter>
@@ -6096,7 +6096,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,highway,name&#10;       from planet_osm_line&#10;       where waterway IS NULL&#10;         and leisure IS NULL&#10;         and landuse IS NULL&#10;         and name is not null&#10;      ) as roads</Parameter>
@@ -6110,7 +6110,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,amenity,shop,access,leisure,landuse,man_made,&quot;natural&quot;,place,tourism,ele,name,ref,military,aeroway,waterway,historic,&apos;yes&apos;::text as point&#10;       from planet_osm_point&#10;       where amenity is not null&#10;          or shop in (&apos;supermarket&apos;,&apos;bakery&apos;,&apos;clothes&apos;,&apos;fashion&apos;,&apos;convenience&apos;,&apos;doityourself&apos;,&apos;hairdresser&apos;,&apos;department_store&apos;,&apos;butcher&apos;,&apos;car&apos;,&apos;car_repair&apos;,&apos;bicycle&apos;,&apos;florist&apos;)&#10;          or leisure is not null&#10;          or landuse is not null&#10;          or tourism is not null&#10;          or &quot;natural&quot; is not null&#10;          or man_made in (&apos;lighthouse&apos;,&apos;windmill&apos;)&#10;          or place=&apos;island&apos;&#10;          or military=&apos;danger_area&apos;&#10;          or aeroway=&apos;gate&apos;&#10;          or waterway=&apos;lock&apos;&#10;          or historic in (&apos;memorial&apos;,&apos;archaeological_site&apos;)&#10;      ) as text</Parameter>
@@ -6124,7 +6124,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,aeroway,shop,access,amenity,leisure,landuse,man_made,&quot;natural&quot;,place,tourism,NULL as ele,name,ref,military,waterway,historic,&apos;no&apos;::text as point&#10;       from planet_osm_polygon&#10;       where amenity is not null&#10;          or shop in (&apos;supermarket&apos;,&apos;bakery&apos;,&apos;clothes&apos;,&apos;fashion&apos;,&apos;convenience&apos;,&apos;doityourself&apos;,&apos;hairdresser&apos;,&apos;department_store&apos;, &apos;butcher&apos;,&apos;car&apos;,&apos;car_repair&apos;,&apos;bicycle&apos;)&#10;          or leisure is not null&#10;          or landuse is not null&#10;          or tourism is not null&#10;          or &quot;natural&quot; is not null&#10;          or man_made in (&apos;lighthouse&apos;,&apos;windmill&apos;)&#10;          or place=&apos;island&apos;&#10;          or military=&apos;danger_area&apos;&#10;          or historic in (&apos;memorial&apos;,&apos;archaeological_site&apos;)&#10;      ) as text</Parameter>
@@ -6138,7 +6138,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,way_area,name&#10;       from planet_osm_polygon&#10;       where name is not null&#10;         and (waterway is null or waterway != &apos;riverbank&apos;)&#10;         and place is null&#10;       order by way_area desc&#10;      ) as text</Parameter>
@@ -6152,7 +6152,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way from planet_osm_line where &quot;addr:interpolation&quot; is not null) as interpolation</Parameter>
@@ -6166,7 +6166,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&quot;addr:housenumber&quot; from planet_osm_polygon where &quot;addr:housenumber&quot; is not null and building is not null&#10;       union&#10;       select way,&quot;addr:housenumber&quot; from planet_osm_point where &quot;addr:housenumber&quot; is not null&#10;      ) as housenumbers</Parameter>
@@ -6180,7 +6180,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,&quot;addr:housename&quot; from planet_osm_polygon where &quot;addr:housename&quot; is not null and building is not null&#10;       union&#10;       select way,&quot;addr:housename&quot; from planet_osm_point where &quot;addr:housename&quot; is not null&#10;      ) as housenames</Parameter>
@@ -6194,7 +6194,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,way_area,name,boundary from planet_osm_polygon where boundary=&apos;national_park&apos; and building is null) as boundary</Parameter>
@@ -6208,7 +6208,7 @@
       <Parameter name="dbname">topicos</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-      <Parameter name="host">172.18.0.2</Parameter>
+      <Parameter name="host">postgis</Parameter>
       <Parameter name="password">WhatAnAwesomePassword</Parameter>
       <Parameter name="port"/>
       <Parameter name="table">(select way,name,tourism from planet_osm_polygon where tourism=&apos;theme_park&apos;) as theme_park</Parameter>
