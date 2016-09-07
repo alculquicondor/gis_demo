@@ -3,3 +3,4 @@ gunicorn==19.6.0
 Pillow==3.3.1
 TileStache==1.51.1
 mapnik==0.1
+psycopg2==2.6.2
