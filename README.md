@@ -21,5 +21,7 @@ docker-compose up -d
 # or `docker-compose -f docker-compose.prod.yml up -d` if you don't intent to develo'
 
 # Filling up OSM data
-./fill_osm_data.sh
+./setup/fill_osm_data.sh
+# Creating app tables
+./setup/create_app_tables.sh
 ```

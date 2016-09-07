@@ -2,4 +2,4 @@
 *.pyc
 *.osm.pbf
 .idea/
-mapnik-stylesheets
+mapnik-stylesheets/
