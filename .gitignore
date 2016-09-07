@@ -1,4 +1,5 @@
 *.swp
 *.pyc
 *.osm.pbf
+.idea/
 mapnik-stylesheets
