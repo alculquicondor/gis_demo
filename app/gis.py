@@ -39,8 +39,29 @@ def areas_list():
     connection = get_connection()
     cursor = connection.cursor()
 
-    cursor.execute('SELECT id, name, ST_ASGEOJSON(geometry) as geometry '
-                   'FROM gisdemo_area')
+    query_lat = request.args.get('lat')
+    query_lon = request.args.get('lon')
+
+    query = ('SELECT id, name, ST_ASGEOJSON(geometry) as geometry '
+             'FROM gisdemo_area')
+    query_params = None
+    if query_lat and query_lon:
+        query += (' WHERE ST_INTERSECTS(gisdemo_area.geometry, '
+                  'ST_SETSRID(ST_MAKEPOINT(%s, %s), 4326))')
+        try:
+            query_lat = float(query_lat)
+        except ValueError:
+            abort(400, 'invalid latitude')
+        try:
+            query_lon = float(query_lon)
+        except ValueError:
+            abort(400, 'invalid longitude')
+        query_params = (query_lon, query_lat)
+
+    elif query_lat or query_lon:
+        abort(400, 'both latitude and longitude are needed for point query')
+
+    cursor.execute(query, query_params)
     features = []
     for row in cursor.fetchall():
         features.append({
