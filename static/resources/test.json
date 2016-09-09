@@ -1,0 +1,16 @@
+{ "type": "FeatureCollection",
+    "features": [
+      { "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [-3.8423316311549156, -75.73974609375001]},
+        "properties": {"name": "Iquitos"}
+        },
+      { "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [-5.069057826784033, -80.52978515625001]},
+        "properties": {"name": "Piura"}
+        },
+      { "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [-13.667338259654947, -71.54296875000001]},
+        "properties": {"name": "Cusco"}
+      }
+    ]
+}
