@@ -9,6 +9,6 @@ RUN pip install -r requirements.txt
 
 WORKDIR /srv/gis
 COPY app/tiles.conf app/peru.xml ./
-COPY app/gis.py .
+COPY app/gis.py app/settings.py ./
 
 CMD gunicorn -b 0.0.0.0:8000 -w 2 gis:app
