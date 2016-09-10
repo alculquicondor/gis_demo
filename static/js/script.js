@@ -7,15 +7,18 @@ L.tileLayer('/api/base_layer/{z}/{x}/{y}.png', {
 }).addTo(mymap);
 
 $.get('/api/areas', function (markers) {
-  /*markers = markers.features;
-  for ( var i=0; i < markers.length; ++i ) {
-    var coords = markers[i].geometry.coordinates;
-    L.marker( [coords[0], coords[1]] )
-        .bindPopup( markers[i].properties.name )
-        .addTo( mymap );
-  }*/
-  console.log(markers);
+  var mrks = markers.features.forEach(function (f) {
+  	var points = f.geometry.coordinates[0].map(function (p) {
+  		return {
+  			lat: p[1],
+  			lng: p[0]
+  		}
+  	})
+  	var p = L.polygon(points)
+  	p.addTo( mymap );
+  })
 })
+
 
 var capture = 0;
 var capturedData = [];
@@ -30,6 +33,9 @@ function onMapClick(e) {
       if (!capture) {
         var p = L.polygon(capturedData)
         p.addTo( mymap );
+        p = p.toGeoJSON();
+        p.properties.name = prompt('Write a label for this polygon');
+        console.log(p);
         allPolygons.push(p)
         capturedData = [];
       }
@@ -49,15 +55,31 @@ mymap.on('click', onMapClick);
 
 function send() {
   var p = allPolygons.map(function (p) {
-    return p.toGeoJSON();
+  	return p;
   });
   p.forEach(function(poly) {
-  	$.post('/api/areas/create',poly,function(){
-  		console.log(arguments);
-  	})
+  	$.ajax('/api/areas/create', {
+	    data : JSON.stringify(poly),
+	    contentType : 'application/json',
+	    type : 'POST'
+	}).done(function () {
+		console.log(arguments);
+	})
   })
 }
 
-function clean(){
-	console.log('Tengo que limpiar el mapa');
+function getResults(){
+  $.get('/api/areas', function (markers) {
+  var mrks = markers.features.forEach(function (f) {
+  	var points = f.geometry.coordinates[0].map(function (p) {
+  		return {
+  			lat: p[1],
+  			lng: p[0]
+  		}
+  	})
+  	var p = L.polygon(points,{color: 'red'});
+  	p.addTo( mymap );
+  })
+})
+
 }
