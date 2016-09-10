@@ -6,24 +6,36 @@ L.tileLayer('/api/base_layer/{z}/{x}/{y}.png', {
 		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 }).addTo(mymap);
 
-$.get('/api/areas', function (markers) {
+
+function showPolygons(){
+  $.get('/api/areas', function (markers) {
   var mrks = markers.features.forEach(function (f) {
-  	var points = f.geometry.coordinates[0].map(function (p) {
-  		return {
-  			lat: p[1],
-  			lng: p[0]
-  		}
-  	})
-  	var p = L.polygon(points)
-  	p.addTo( mymap );
+    var points = f.geometry.coordinates[0].map(function (p) {
+      return {
+        lat: p[1],
+        lng: p[0]
+      }
+    })
+    var p = L.polygon(points)
+    p.addTo( mymap );
+    })
   })
-})
+}
 
-
+var setPointFlag = false;
 var capture = 0;
 var capturedData = [];
 var allPolygons = [];
 
+function setPoint () {
+  capture = 0;
+  setPointFlag = true;
+}
+
+function onMapDblClick (e) {
+  e.preventDefault();
+  console.log(e);
+}
 
 function onMapClick(e) {
     if (capture) {
@@ -41,6 +53,14 @@ function onMapClick(e) {
       }
       return;
     }
+    if (setPointFlag) {
+      $.get('/api/areas?lon='+e.latlng.lng+'&lat='+e.latlng.lat, function (data) {
+        //console.log(data);
+        getResults(data);
+      });
+      setPointFlag = false;
+      return;
+    }
     console.log('Not capturing..')
 }
 
@@ -52,6 +72,7 @@ function getPolygon(){
 
 
 mymap.on('click', onMapClick);
+mymap.on('dblclick', onMapDblClick);
 
 function send() {
   var p = allPolygons.map(function (p) {
@@ -68,8 +89,7 @@ function send() {
   })
 }
 
-function getResults(){
-  $.get('/api/areas', function (markers) {
+function getResults(markers){
   var mrks = markers.features.forEach(function (f) {
   	var points = f.geometry.coordinates[0].map(function (p) {
   		return {
@@ -80,6 +100,4 @@ function getResults(){
   	var p = L.polygon(points,{color: 'red'});
   	p.addTo( mymap );
   })
-})
-
 }
