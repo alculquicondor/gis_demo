@@ -13,6 +13,7 @@ services:
             POSTGRES_USER: 'topicos'
             POSTGRES_DB: 'topicos'
             POSTGRES_PASSWORD: 'WhatAnAwesomePassword'
+        restart: always
 
     gunicorn:
         build:
@@ -25,6 +26,7 @@ services:
             - ./mapnik-stylesheets/symbols:/srv/gis/symbols
         links:
             - postgis
+        restart: always
 
     nginx:
         build:
@@ -35,3 +37,4 @@ services:
             - gunicorn
         ports:
             - "80:80"
+        restart: always
